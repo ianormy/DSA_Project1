@@ -19,14 +19,22 @@ September 2016.".
 
 
 def main():
-    max_secs = 0
-    max_secs_telno = None
+    phone_durations = {}
     for c in calls:
         num_secs = int(c[3])
-        if num_secs > max_secs:
-            max_secs_telno = c[0]
-            max_secs = num_secs
-    print(f'{max_secs_telno} spent the longest time, {max_secs} seconds, on the phone during September 2016.')
+        # time spent calling
+        if c[0] in phone_durations:
+            phone_durations[c[0]] += num_secs
+        else:
+            phone_durations[c[0]] = num_secs
+        # time spent answering
+        if c[1] in phone_durations:
+            phone_durations[c[1]] += num_secs
+        else:
+            phone_durations[c[1]] = num_secs
+    # sort our dictionary by phone durations, highest first, then take the first item
+    max_key = sorted(phone_durations, key=phone_durations.get, reverse=True)[0]
+    print(f'{max_key} spent the longest time, {phone_durations[max_key]} seconds, on the phone during September 2016.')
 
 
 if __name__ == '__main__':

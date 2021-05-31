@@ -193,15 +193,14 @@ def part_b():
     to other fixed lines in Bangalore."
     The percentage should have 2 decimal digits
     """
-    total_calls = len(calls)
-    bangalore_calls = 0
+    from_bangalore = 0
+    to_bangalore = 0
     for call in calls:
-        if not is_bangalore_number(call[0]):
-            continue
-        # this is from a Bangalore number
-        if is_bangalore_number(call[1]):
-            bangalore_calls += 1
-    percent_calls = bangalore_calls / total_calls * 100.0
+        if is_bangalore_number(call[0]):
+            from_bangalore += 1
+            if is_bangalore_number(call[1]):
+                to_bangalore += 1
+    percent_calls = to_bangalore / from_bangalore * 100.0
     print('{:.2f} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.'.format(
         percent_calls))
 
