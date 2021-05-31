@@ -1,68 +1,74 @@
 This file contains an explanation of my run time analysis (Worst-Case Big-O Notation) for each solution
 I have produced.
 
-For all the tasks, n denotes the number of calls recorded and m denotes the number of texts recorded.
+For all the tasks, n denotes the number of calls recorded. I have assumed that this is always more than
+the number of texts recorded and for the worst case time estimation this is also denoted as n.
 
 Task0
 =====
 To obtain the information required and then to print it would take the following time in the worst-case:
 
-You will go through all the calls once to load them - O(n), then through all the texts to load them - O(m)
+Indexing the items are O(1) each
 
 Altogether that would become:
 
-O(n + m)
+O(1)
 
 
 Task1
 =====
 To obtain the information required and then to print it would take the following time in the worst-case:
 
-You will go through all the calls once to load them, then once to find the unique numbers - O(2n) ~= O(n)
-You will go through all the texts once to load them, then once to find the unique numbers - O(2m) ~= O(m)
-
-Altogether that would become:
-
-O(n + m)
-
-Task2
-=====
-To obtain the information required and then to print it would take the following time in the worst-case:
-
-You will go through all the calls once to load them, then once to find the maximum time - O(2n) ~= O(n)
+* go through all the calls once to find the unique numbers - O(n)
+* go through all the texts once to find the unique numbers - O(n)
 
 Altogether that would become:
 
 O(n)
 
+Task2
+=====
+To obtain the information required and then to print it would take the following time in the worst-case:
+
+* go through all the calls adding up the time taken sending and receiving calls - O(n)
+* sort the dictionary in the order of highest duration to lowest - O(n log(n))
+* take the first item in that list - O(1)
+
+Altogether that would become:
+
+O(n log(n))
+
 Task3
 =====
 To obtain the information required and then to print it would take the following time in the worst-case:
 
-Part A - you will go through all the calls once to load them, then once to find the unique numbers, then once to print
-them out in a sorted list - O(3n)
-Part B - You will go through all the calls once to find the percentage required - O(n)
+Part A
+* go through all the calls once to find the unique numbers - O(n)
+* sort the list of unique numbers - O(n log(n))
+* go through the list of sorted unique numbers printing them - O(n)
+Part B
+* go through all the calls once to find the percentage required - O(n)
 
 Altogether that would become:
 
-O(4n) ~= O(n)
+O(n + n log(n)) ~= O(n log(n))
+since O(n log(n)) is longer than O(n)
 
 Task4
 =====
 To obtain the information required and then to print it would take the following time in the worst-case:
 
-* go through all the calls once to load them - O(n)
 * go through all the calls once to find the unique numbers - O(n)
 * go through all the calls once to remove numbers that receive calls - O(n)
-Total for that part: O(3n) ~= O(n)
+Total for that part: O(2n) ~= O(n)
 
-* go through all the texts once to load them - O(m)
-* go through all the texts once to remove all numbers that send or receive texts - O(m)
-Totals for that part: O(2m) ~= O(m)
+* go through all the texts once to remove all numbers that send or receive texts - O(n)
+Totals for that part: O(n)
 
-* sort the remaining list of unique numbers - O(n log n)
+* sort the remaining list of unique numbers - O(n log(n))
 * Go through the remaining sorted list of unique numbers to print them off - O(n)
 
 Altogether that would become:
 
-O(n log n + m)
+O(n + n log(n)) ~= O(n log(n))
+since O(n log(n)) is longer than O(n)

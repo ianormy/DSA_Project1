@@ -30,18 +30,14 @@ def main():
     #  first identify all numbers that make outgoing calls
     outgoing_calls = set()
     for call in calls:
-        if call[0] not in outgoing_calls:
-            outgoing_calls.add(call[0])
+        outgoing_calls.add(call[0])
     # remove all numbers that receive incoming calls
     for call in calls:
-        if call[1] in outgoing_calls:
-            outgoing_calls.remove(call[1])
+        outgoing_calls.remove(call[1])
     # remove all numbers that send or receive texts
     for text in texts:
-        if text[0] in outgoing_calls:
-            outgoing_calls.remove(text[0])
-        if text[1] in outgoing_calls:
-            outgoing_calls.remove(text[1])
+        outgoing_calls.remove(text[0])
+        outgoing_calls.remove(text[1])
     print('These numbers could be telemarketers: ')
     for code in sorted(outgoing_calls):
         print(f'{code}')

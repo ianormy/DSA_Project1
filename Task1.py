@@ -23,15 +23,11 @@ Print a message:
 def main():
     unique_tel_nums = set()
     for t in texts:
-        if not t[0] in unique_tel_nums:
-            unique_tel_nums.add(t[0])
-        if not t[1] in unique_tel_nums:
-            unique_tel_nums.add(t[1])
+        unique_tel_nums.add(t[0])
+        unique_tel_nums.add(t[1])
     for c in calls:
-        if not c[0] in unique_tel_nums:
-            unique_tel_nums.add(c[0])
-        if not c[1] in unique_tel_nums:
-            unique_tel_nums.add(c[1])
+        unique_tel_nums.add(c[0])
+        unique_tel_nums.add(c[1])
     print(f'There are {len(unique_tel_nums)} different telephone numbers in the records.')
 
 
