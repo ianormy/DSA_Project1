@@ -51,12 +51,18 @@ Task4
 =====
 To obtain the information required and then to print it would take the following time in the worst-case:
 
-You will go through all the calls once to load them, then once to find the unique numbers, then once to remove numbers
-that receive calls - O(3n) ~= O(n)
-You will go through all the texts once to load them, then once to remove all numbers that send or receive
-texts - O(2m) ~= O(m)
-Finally you will go through the remaining unique numbers to print them off - O(n)
+* go through all the calls once to load them - O(n)
+* go through all the calls once to find the unique numbers - O(n)
+* go through all the calls once to remove numbers that receive calls - O(n)
+Total for that part: O(3n) ~= O(n)
+
+* go through all the texts once to load them - O(m)
+* go through all the texts once to remove all numbers that send or receive texts - O(m)
+Totals for that part: O(2m) ~= O(m)
+
+* sort the remaining list of unique numbers - O(n log n)
+* Go through the remaining sorted list of unique numbers to print them off - O(n)
 
 Altogether that would become:
 
-O(n + m)
+O(n log n + m)
