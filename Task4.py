@@ -27,9 +27,6 @@ The list of numbers should be printed out one per line in lexicographic order wi
 
 
 def main():
-    """
-    Time Estimate: O(3n+m) - worst case estimate - where n is the number of calls recorded and m is the number of texts
-    """
     #  first identify all numbers that make outgoing calls
     outgoing_calls = set()
     for call in calls:

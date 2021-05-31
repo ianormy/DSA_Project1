@@ -130,6 +130,11 @@ def test_fixed_line_numbers():
 
 
 def run_tests():
+    """Run tests
+
+    I've included tests here in a standard assertion format rather than using
+    PyTest or something similar in order to minimise dependencies.
+    """
     test_mobile_phone_numbers()
     test_telemarketing_numbers()
     test_fixed_line_numbers()

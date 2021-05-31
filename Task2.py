@@ -3,9 +3,6 @@ Read file into texts and calls.
 It's ok if you don't understand how to read files
 """
 import csv
-with open('texts.csv', 'r') as f:
-    reader = csv.reader(f)
-    texts = list(reader)
 
 with open('calls.csv', 'r') as f:
     reader = csv.reader(f)
@@ -18,8 +15,6 @@ also time spent on the phone.
 Print a message:
 "<telephone number> spent the longest time, <total time> seconds, on the phone during 
 September 2016.".
-
-Time Estimate: O(n) - where n is the number of calls recorded
 """
 
 
