@@ -1,0 +1,62 @@
+This file contains an explanation of my run time analysis (Worst-Case Big-O Notation) for each solution
+I have produced.
+
+For all the tasks, n denotes the number of calls recorded and m denotes the number of texts recorded.
+
+Task0
+=====
+To obtain the information required and then to print it would take the following time in the worst-case:
+
+You will go through all the calls once to load them - O(n), then through all the texts to load them - O(m)
+
+Altogether that would become:
+
+O(n + m)
+
+
+Task1
+=====
+To obtain the information required and then to print it would take the following time in the worst-case:
+
+You will go through all the calls once to load them, then once to find the unique numbers - O(2n) ~= O(n)
+You will go through all the texts once to load them, then once to find the unique numbers - O(2m) ~= O(m)
+
+Altogether that would become:
+
+O(n + m)
+
+Task2
+=====
+To obtain the information required and then to print it would take the following time in the worst-case:
+
+You will go through all the calls once to load them, then once to find the maximum time - O(2n) ~= O(n)
+
+Altogether that would become:
+
+O(n)
+
+Task3
+=====
+To obtain the information required and then to print it would take the following time in the worst-case:
+
+Part A - you will go through all the calls once to load them, then once to find the unique numbers, then once to print
+them out in a sorted list - O(3n)
+Part B - You will go through all the calls once to find the percentage required - O(n)
+
+Altogether that would become:
+
+O(4n) ~= O(n)
+
+Task4
+=====
+To obtain the information required and then to print it would take the following time in the worst-case:
+
+You will go through all the calls once to load them, then once to find the unique numbers, then once to remove numbers
+that receive calls - O(3n) ~= O(n)
+You will go through all the texts once to load them, then once to remove all numbers that send or receive
+texts - O(2m) ~= O(m)
+Finally you will go through the remaining unique numbers to print them off - O(n)
+
+Altogether that would become:
+
+O(n + m)
